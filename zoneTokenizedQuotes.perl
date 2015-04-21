@@ -37,5 +37,5 @@ while(my $row = <STDIN>) {
 	}
     }
     
-    print join (" ", @outwords);
+    print join (" ", @outwords) . "\n";
 }
