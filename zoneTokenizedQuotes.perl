@@ -5,6 +5,9 @@
 use strict;
 use utf8;
 
+#flush!
+$| = 1;
+
 while(my $row = <STDIN>) {
 
     my @outwords = ();
@@ -35,6 +38,11 @@ while(my $row = <STDIN>) {
 	else {
 	    push(@outwords, $word);
 	}
+    }
+
+    #handle dangling zone
+    if($quotecnt > 0 ) {
+	push(@outwords, "</zone>");
     }
     
     print join (" ", @outwords) . "\n";
